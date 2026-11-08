@@ -17,14 +17,14 @@ def main(page: ft.Page):
 
     if is_mobile:
         # Для мобильных устройств — адаптивный размер (занимает весь экран)
-        page.window_width = 360  # Минимальная ширина для мобильных
-        page.window_height = 640  # Минимальная высота
-        page.window_resizable = True  # Можно растягивать
+        page.window.width = 360  # Минимальная ширина для мобильных
+        page.window.height = 640  # Минимальная высота
+        page.window.resizable = True  # Можно растягивать
     else:
         # Для десктопа — стандартный размер окна
-        page.window_width = 1280
-        page.window_height = 800
-        page.window_resizable = True
+        page.window.width = 1280
+        page.window.height = 800
+        page.window.resizable = True
 
     page.user_data = None
 
@@ -74,4 +74,4 @@ def main(page: ft.Page):
 
 
 if __name__ == "__main__":
-    ft.app(target=main)
+    ft.app(main)
